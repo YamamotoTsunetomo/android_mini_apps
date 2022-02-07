@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="app/src/main/res/drawable/button.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/button_resource_disabled.xml" value="0.1505" />
+        <entry key="app/src/main/res/drawable/cyan_button_resource.xml" value="0.348" />
+        <entry key="app/src/main/res/drawable/green_button_resource.xml" value="0.348" />
+        <entry key="app/src/main/res/drawable/operator_text_view_resource.xml" value="0.348" />
+        <entry key="app/src/main/res/drawable/red_button_resource.xml" value="0.1405" />
+        <entry key="app/src/main/res/drawable/regular_button_pressed_resource.xml" value="0.251" />
+        <entry key="app/src/main/res/drawable/regular_button_resource.xml" value="0.14" />
+        <entry key="app/src/main/res/drawable/result_text_view_resource.xml" value="0.14" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_splash.xml" value="0.22" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.348" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

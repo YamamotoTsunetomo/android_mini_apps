@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Simple Calculator</string>
+    <string name="app_title">Simple Calculator</string>
+    <string name="c_btn_text">C</string>
+    <string name="divide_btn_text">/</string>
+    <string name="seven_btn_text">7</string>
+    <string name="eight_btn_text">8</string>
+    <string name="nine_btn_text">9</string>
+    <string name="multiply_btn_text">*</string>
+    <string name="four_btn_text">4</string>
+    <string name="five_btn_text">5</string>
+    <string name="six_btn_text">6</string>
+    <string name="minus_btn_text">-</string>
+    <string name="one_btn_text">1</string>
+    <string name="two_btn_text">2</string>
+    <string name="three_btn_text">3</string>
+    <string name="add_btn_text">+</string>
+    <string name="zero_btn_text">0</string>
+    <string name="period_btn_text">.</string>
+    <string name="equals_btn_text">=</string>
+    <string name="result_text">123</string>
+    <string name="pi_btn_text">PI</string>
+    <string name="power_btn_text">^</string>
+</resources>
