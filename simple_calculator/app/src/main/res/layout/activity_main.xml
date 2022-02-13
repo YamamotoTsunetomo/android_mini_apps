@@ -9,9 +9,10 @@
 
     <TextView
         android:id="@+id/tvComma"
-        android:layout_width="90dp"
-        android:layout_height="90dp"
-        android:layout_margin="0dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintWidth_max="90dp"
+        app:layout_constraintHeight_max="90dp"
         android:background="@drawable/regular_button_resource"
         android:fontFamily="serif"
         android:text="@string/period_btn_text"
@@ -24,11 +25,12 @@
         app:layout_constraintStart_toEndOf="@+id/tvC"
         app:layout_constraintTop_toBottomOf="@+id/tvTwo" />
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/tvZero"
-        android:layout_width="90dp"
-        android:layout_height="90dp"
-        android:layout_margin="0dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintWidth_max="90dp"
+        app:layout_constraintHeight_max="90dp"
         android:background="@drawable/regular_button_resource"
         android:fontFamily="serif"
         android:text="@string/zero_btn_text"
@@ -41,10 +43,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvOne" />
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/tvEquals"
-        android:layout_width="90dp"
-        android:layout_height="90dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintWidth_max="90dp"
+        app:layout_constraintHeight_max="90dp"
         android:background="@drawable/cyan_button_resource"
         android:fontFamily="serif"
         android:text="@string/equals_btn_text"
@@ -57,14 +61,17 @@
         app:layout_constraintStart_toEndOf="@+id/tvPower"
         app:layout_constraintTop_toBottomOf="@+id/tvAdd" />
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/tvDelete"
-        android:layout_width="90dp"
-        android:layout_height="90dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintWidth_max="90dp"
+        app:layout_constraintHeight_max="90dp"
         android:background="@drawable/red_button_resource"
         android:fontFamily="serif"
         android:padding="8dp"
-        android:text="del"
+        android:text="@string/delete_btn_text"
+        android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="50sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -73,10 +80,12 @@
         app:layout_constraintStart_toEndOf="@+id/tvPI"
         app:layout_constraintTop_toBottomOf="@+id/tvThree" />
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/tvThree"
-        android:layout_width="90dp"
-        android:layout_height="90dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintWidth_max="90dp"
+        app:layout_constraintHeight_max="90dp"
         android:layout_margin="0dp"
         android:background="@drawable/regular_button_resource"
         android:fontFamily="serif"
@@ -90,10 +99,12 @@
         app:layout_constraintStart_toEndOf="@+id/tvPI"
         app:layout_constraintTop_toBottomOf="@+id/tvSix" />
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/tvOne"
-        android:layout_width="90dp"
-        android:layout_height="90dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintWidth_max="90dp"
+        app:layout_constraintHeight_max="90dp"
         android:layout_margin="0dp"
         android:background="@drawable/regular_button_resource"
         android:fontFamily="serif"
@@ -107,10 +118,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvFour" />
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/tvAdd"
-        android:layout_width="90dp"
-        android:layout_height="90dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintWidth_max="90dp"
+        app:layout_constraintHeight_max="90dp"
         android:layout_margin="0dp"
         android:background="@drawable/cyan_button_resource"
         android:fontFamily="serif"
@@ -124,10 +137,12 @@
         app:layout_constraintStart_toEndOf="@+id/tvPower"
         app:layout_constraintTop_toBottomOf="@+id/tvSubtract" />
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/tvTwo"
-        android:layout_width="90dp"
-        android:layout_height="90dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintWidth_max="90dp"
+        app:layout_constraintHeight_max="90dp"
         android:layout_margin="0dp"
         android:background="@drawable/regular_button_resource"
         android:fontFamily="serif"
@@ -141,10 +156,12 @@
         app:layout_constraintStart_toEndOf="@+id/tvC"
         app:layout_constraintTop_toBottomOf="@+id/tvFive" />
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/tvNine"
-        android:layout_width="90dp"
-        android:layout_height="90dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintWidth_max="90dp"
+        app:layout_constraintHeight_max="90dp"
         android:layout_margin="0dp"
         android:background="@drawable/regular_button_resource"
         android:fontFamily="serif"
@@ -158,11 +175,12 @@
         app:layout_constraintStart_toEndOf="@+id/tvPI"
         app:layout_constraintTop_toBottomOf="@+id/tvPower" />
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/tvSeven"
-        android:layout_width="90dp"
-        android:layout_height="90dp"
-        android:layout_margin="0dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintWidth_max="90dp"
+        app:layout_constraintHeight_max="90dp"
 
         android:background="@drawable/regular_button_resource"
         android:fontFamily="serif"
@@ -176,11 +194,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvC" />
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/tvMultiply"
-        android:layout_width="90dp"
-        android:layout_height="90dp"
-        android:layout_margin="0dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintWidth_max="90dp"
+        app:layout_constraintHeight_max="90dp"
         android:background="@drawable/cyan_button_resource"
         android:fontFamily="serif"
         android:text="@string/multiply_btn_text"
@@ -193,11 +212,12 @@
         app:layout_constraintStart_toEndOf="@+id/tvPower"
         app:layout_constraintTop_toBottomOf="@+id/tvDivide" />
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/tvEight"
-        android:layout_width="90dp"
-        android:layout_height="90dp"
-        android:layout_margin="0dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintWidth_max="90dp"
+        app:layout_constraintHeight_max="90dp"
         android:background="@drawable/regular_button_resource"
         android:fontFamily="serif"
         android:text="@string/eight_btn_text"
@@ -210,11 +230,12 @@
         app:layout_constraintStart_toEndOf="@+id/tvC"
         app:layout_constraintTop_toBottomOf="@+id/tvPI" />
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/tvFive"
-        android:layout_width="90dp"
-        android:layout_height="90dp"
-        android:layout_margin="0dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintWidth_max="90dp"
+        app:layout_constraintHeight_max="90dp"
         android:background="@drawable/regular_button_resource"
         android:fontFamily="serif"
         android:text="@string/five_btn_text"
@@ -227,11 +248,12 @@
         app:layout_constraintStart_toEndOf="@+id/tvC"
         app:layout_constraintTop_toBottomOf="@+id/tvEight" />
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/tvFour"
-        android:layout_width="90dp"
-        android:layout_height="90dp"
-        android:layout_margin="0dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintWidth_max="90dp"
+        app:layout_constraintHeight_max="90dp"
         android:background="@drawable/regular_button_resource"
         android:fontFamily="serif"
         android:text="@string/four_btn_text"
@@ -244,11 +266,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvSeven" />
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/tvSubtract"
-        android:layout_width="90dp"
-        android:layout_height="90dp"
-        android:layout_margin="0dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintWidth_max="90dp"
+        app:layout_constraintHeight_max="90dp"
         android:background="@drawable/cyan_button_resource"
         android:fontFamily="serif"
         android:text="@string/minus_btn_text"
@@ -261,11 +284,12 @@
         app:layout_constraintStart_toEndOf="@+id/tvPower"
         app:layout_constraintTop_toBottomOf="@+id/tvMultiply" />
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/tvSix"
-        android:layout_width="90dp"
-        android:layout_height="90dp"
-        android:layout_margin="0dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintWidth_max="90dp"
+        app:layout_constraintHeight_max="90dp"
         android:background="@drawable/regular_button_resource"
         android:fontFamily="serif"
         android:text="@string/six_btn_text"
@@ -279,11 +303,13 @@
         app:layout_constraintTop_toBottomOf="@+id/tvNine" />
 
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/tvResult"
+        android:scrollbars = "vertical"
         android:fontFamily="serif"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:maxHeight="150dp"
         android:background="@drawable/result_text_view_resource"
         android:padding="16dp"
         android:textAlignment="viewEnd"
@@ -294,11 +320,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/tvPI"
-        android:layout_width="90dp"
-        android:layout_height="90dp"
-        android:layout_margin="0dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintWidth_max="90dp"
+        app:layout_constraintHeight_max="90dp"
         android:background="@drawable/cyan_button_resource"
         android:fontFamily="serif"
         android:text="@string/pi_btn_text"
@@ -311,11 +338,12 @@
         app:layout_constraintStart_toEndOf="@+id/tvC"
         app:layout_constraintTop_toBottomOf="@+id/tvResult" />
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/tvPower"
-        android:layout_width="90dp"
-        android:layout_height="90dp"
-        android:layout_margin="0dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintWidth_max="90dp"
+        app:layout_constraintHeight_max="90dp"
         android:background="@drawable/cyan_button_resource"
         android:fontFamily="serif"
         android:text="@string/power_btn_text"
@@ -328,11 +356,12 @@
         app:layout_constraintStart_toEndOf="@+id/tvPI"
         app:layout_constraintTop_toBottomOf="@+id/tvResult" />
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/tvDivide"
-        android:layout_width="90dp"
-        android:layout_height="90dp"
-        android:layout_margin="0dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintWidth_max="90dp"
+        app:layout_constraintHeight_max="90dp"
         android:background="@drawable/cyan_button_resource"
         android:fontFamily="serif"
         android:text="@string/divide_btn_text"
@@ -345,12 +374,14 @@
         app:layout_constraintStart_toEndOf="@+id/tvPower"
         app:layout_constraintTop_toBottomOf="@+id/tvResult" />
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatButton
         style="@android:style/Widget.Button"
         android:clickable="false"
         android:id="@+id/tvC"
-        android:layout_width="90dp"
-        android:layout_height="90dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintWidth_max="90dp"
+        app:layout_constraintHeight_max="90dp"
         android:layout_margin="0dp"
         android:background="@drawable/green_button_resource"
         android:fontFamily="serif"

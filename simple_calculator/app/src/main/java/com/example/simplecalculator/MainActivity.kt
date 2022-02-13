@@ -1,6 +1,7 @@
 package com.example.simplecalculator
 
 import android.os.Bundle
+import android.text.method.ScrollingMovementMethod
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
@@ -10,9 +11,16 @@ import kotlin.math.pow
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+        // hiding action bar
         supportActionBar?.hide()
+        super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        var hasToBeDeleted = false
+
+        // making the text view scrollable
+        tvResult.movementMethod = ScrollingMovementMethod()
+
 
         val numbersAndOperatorsList = listOf<TextView>(
             tvPower, tvDivide,
@@ -20,10 +28,12 @@ class MainActivity : AppCompatActivity() {
             tvSix, tvSeven, tvEight, tvNine, tvZero, tvComma
         )
 
+        // numbers and operators functionality
         numbersAndOperatorsList.forEach { btn ->
             btn.setOnClickListener {
-                val expression = tvResult.text.toString() + btn.text.toString()
+                val expression = (if (!hasToBeDeleted) tvResult.text.toString() else "") + btn.text.toString()
                 tvResult.text = expression
+                hasToBeDeleted = false
             }
         }
 
@@ -42,14 +52,16 @@ class MainActivity : AppCompatActivity() {
 
         tvEquals.setOnClickListener {
             tvResult.text = evaluate(tvResult.text.toString())
+            hasToBeDeleted = true
         }
     }
 
     private fun evaluate(expression: String): String {
+        val isNumber = fun(x: Char) = x in '0'..'9' || x == '.'
+        val hasPrecedence = fun(op1: Char, op2: Char) = !(op1 in "*/" && (op2 in "+-"))
         val values: Stack<Double> = Stack()
         val operations: Stack<Char> = Stack()
-        val operators = "+-/*^"
-        fun isNumber(x: Char) = x in '0'..'9' || x == '.'
+
         var index = 0
         while (index < expression.length) {
             try {
@@ -62,7 +74,7 @@ class MainActivity : AppCompatActivity() {
                         index--
                     }
 
-                    expression[index] in operators -> {
+                    expression[index] in "*/+-^" -> {
                         while (!operations.empty() && hasPrecedence(
                                 expression[index],
                                 operations.peek()
@@ -87,14 +99,14 @@ class MainActivity : AppCompatActivity() {
         while (!operations.empty()) {
             values.push(applyOperation(operations.pop(), values.pop(), values.pop()))
         }
-        return values.pop().toString()
+        val result = values.pop()
+
+        if (result % 1.0 == .0)
+            return result.toInt().toString()
+
+        return result.toString()
     }
 
-    private fun hasPrecedence(op1: Char, op2: Char): Boolean {
-        if (op1 in "*/" && (op2 in "+-"))
-            return false
-        return true
-    }
 
     private fun applyOperation(op: Char, b: Double, a: Double): Double {
         when (op) {
@@ -106,6 +118,4 @@ class MainActivity : AppCompatActivity() {
         }
         return 0.0
     }
-
-
 }
