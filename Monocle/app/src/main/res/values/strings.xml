@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Monocle</string>
+    <string name="sign_in_description">Take Control Of All Your Accounts,\nIBAN Issued In Minutes</string>
+    <string name="sign_in_et_text">Enter your number to start</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="bottom_nav_balance">Balance</string>
+    <string name="bottom_nav_transfer">Transfer</string>
+    <string name="bottom_nav_accounts">Accounts</string>
+    <string name="bottom_nav_profile">Profile</string>
+    <string name="profile_name">Larry Fox</string>
+    <string name="tv_profile_settings_text">Settings</string>
+    <string name="tv_profile_settings_description_text"><![CDATA[Personal info, app & security]]></string>
+    <string name="tv_profile_exchange_rates_text">Exchange Rates</string>
+    <string name="tv_profile_exchange_rates_description_text">Latest mobile and bank rates</string>
+    <string name="tv_profile_offers_and_promotions_text"><![CDATA[Offers & Promotions]]></string>
+    <string name="tv_profile_offers_and_promotions_description_text">Deposits, Insurance and more</string>
+    <string name="tv_profile_messages_text">Messages</string>
+    <string name="tv_profile_messages_description_text">Get support if you have a problem</string>
+</resources>
