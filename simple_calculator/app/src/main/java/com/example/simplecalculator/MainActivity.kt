@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.text.method.ScrollingMovementMethod
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.example.simplecalculator.databinding.ActivityMainBinding
 import kotlinx.android.synthetic.main.activity_main.*
 import java.lang.Exception
 import java.util.*
@@ -11,47 +12,63 @@ import kotlin.math.pow
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
+        val binding = ActivityMainBinding.inflate(layoutInflater)
         // hiding action bar
         supportActionBar?.hide()
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(binding.root)
 
         var hasToBeDeleted = false
 
         // making the text view scrollable
-        tvResult.movementMethod = ScrollingMovementMethod()
+        binding.btnResult.movementMethod = ScrollingMovementMethod()
 
 
         val numbersAndOperatorsList = listOf<TextView>(
-            tvPower, tvDivide,
-            tvMultiply, tvSubtract, tvAdd, tvOne, tvTwo, tvThree, tvFour, tvFive,
-            tvSix, tvSeven, tvEight, tvNine, tvZero, tvComma
+            binding.btnPower,
+            binding.btnDivide,
+            binding.btnMultiply,
+            binding.btnSubtract,
+            binding.btnAdd,
+            binding.btnOne,
+            binding.btnTwo,
+            binding.btnThree,
+            binding.btnFour,
+            binding.btnFive,
+            binding.btnSix,
+            binding.btnSeven,
+            binding.btnEight,
+            binding.btnNine,
+            binding.btnZero,
+            binding.btnComma
         )
 
         // numbers and operators functionality
         numbersAndOperatorsList.forEach { btn ->
             btn.setOnClickListener {
-                val expression = (if (!hasToBeDeleted) tvResult.text.toString() else "") + btn.text.toString()
-                tvResult.text = expression
+                val expression =
+                    (if (!hasToBeDeleted) binding.btnResult.text.toString() else "") + btn.text.toString()
+                binding.btnResult.text = expression
                 hasToBeDeleted = false
             }
         }
 
 
-        tvPI.setOnClickListener {
-            val expression = tvResult.text.toString() + "3.14"
-            tvResult.text = expression
+        binding.btnPI.setOnClickListener {
+            val expression =
+                (if (!hasToBeDeleted) binding.btnResult.text.toString() else "") + "3.14"
+            binding.btnResult.text = expression
         }
 
-        tvC.setOnClickListener { tvResult.text = "" }
+        binding.btnC.setOnClickListener { binding.btnResult.text = "" }
 
-        tvDelete.setOnClickListener {
-            val currentExpression = tvResult.text.toString()
-            tvResult.text = currentExpression.dropLast(1)
+        binding.btnDelete.setOnClickListener {
+            val currentExpression = binding.btnResult.text.toString()
+            binding.btnResult.text = currentExpression.dropLast(1)
         }
 
-        tvEquals.setOnClickListener {
-            tvResult.text = evaluate(tvResult.text.toString())
+        binding.btnEquals.setOnClickListener {
+            binding.btnResult.text = evaluate(binding.btnResult.text.toString())
             hasToBeDeleted = true
         }
     }
