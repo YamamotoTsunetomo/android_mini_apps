@@ -1,273 +1,270 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/dark"
-    android:padding="16dp"
     tools:context=".ProfileFragment">
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/dark"
+        android:padding="16dp">
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cvProfileImage"
-        android:layout_width="130dp"
-        android:layout_height="130dp"
-        app:cardCornerRadius="250dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/profileHorizontalTopGuideline">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cvProfileImage"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:layout_marginTop="77dp"
+            app:cardCornerRadius="250dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/ivProfileImage"
+                android:layout_width="140dp"
+                android:layout_height="140dp"
+                android:layout_gravity="center"
+                android:src="@drawable/soso" />
+        </androidx.cardview.widget.CardView>
+
+
+        <TextView
+            android:id="@+id/tvProfileName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/sfpro_display_bold"
+            android:gravity="center_horizontal"
+            android:letterSpacing="0"
+            android:lineSpacingExtra="13sp"
+            android:text="@string/profile_name"
+            android:textColor="@color/white"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cvProfileImage" />
+
 
         <ImageView
-            android:id="@+id/ivProfileImage"
-            android:layout_width="140dp"
-            android:layout_height="140dp"
-            android:layout_gravity="center"
-            android:src="@drawable/soso" />
-    </androidx.cardview.widget.CardView>
+            android:id="@+id/ivProfileSettings"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:src="@drawable/ic_profile_settings"
+            app:layout_constraintBottom_toTopOf="@+id/ivProfileExchangeRates"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvProfileName" />
+
+        <ImageView
+            android:id="@+id/ivProfileExchangeRates"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/ic_profile_exchange_rates"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivProfileSettings" />
 
 
-    <TextView
-        android:id="@+id/tvProfileName"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:fontFamily="@font/sfpro_display_bold"
-        android:gravity="center_horizontal"
-        android:letterSpacing="0"
-        android:lineSpacingExtra="13sp"
-        android:text="@string/profile_name"
-        android:textColor="@color/white"
-        android:textSize="28sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cvProfileImage" />
+        <ImageView
+            android:id="@+id/ivProfileOffersAndPromotions"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/ic_profile_offers_and_promotions"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivProfileExchangeRates" />
+
+        <ImageView
+            android:id="@+id/ivProfileMessages"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/ic_profile_messages"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivProfileOffersAndPromotions" />
+
+        <TextView
+            android:id="@+id/tvProfileSettings"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/sfpro_text_regular"
+            android:letterSpacing="0"
+            android:lineSpacingExtra="4sp"
+            android:paddingStart="10dp"
+            android:text="@string/tv_profile_settings_text"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="normal"
+            app:layout_constraintEnd_toStartOf="@+id/ivArrowRightSettings"
+            app:layout_constraintStart_toEndOf="@+id/ivProfileSettings"
+            app:layout_constraintTop_toTopOf="@+id/ivProfileSettings" />
+
+        <TextView
+            android:id="@+id/tvProfileExchangeRates"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/sfpro_text_regular"
+            android:letterSpacing="0"
+            android:lineSpacingExtra="4sp"
+            android:paddingStart="10dp"
+            android:text="@string/tv_profile_exchange_rates_text"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="normal"
+            app:layout_constraintEnd_toStartOf="@+id/ivArrowRightExchangeRates"
+            app:layout_constraintStart_toEndOf="@+id/ivProfileExchangeRates"
+            app:layout_constraintTop_toTopOf="@+id/ivProfileExchangeRates" />
+
+        <TextView
+            android:id="@+id/tvProfileOffersAndPromotions"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/sfpro_text_regular"
+            android:letterSpacing="0"
+            android:lineSpacingExtra="4sp"
+            android:paddingStart="10dp"
+            android:text="@string/tv_profile_offers_and_promotions_text"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="normal"
+            app:layout_constraintEnd_toStartOf="@+id/ivArrowRightOffersAndPromotions"
+            app:layout_constraintStart_toEndOf="@+id/ivProfileOffersAndPromotions"
+            app:layout_constraintTop_toTopOf="@+id/ivProfileOffersAndPromotions" />
+
+        <TextView
+            android:id="@+id/tvProfileMessages"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/sfpro_text_regular"
+            android:letterSpacing="0"
+            android:lineSpacingExtra="4sp"
+            android:paddingStart="10dp"
+            android:text="@string/tv_profile_messages_text"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="normal"
+            app:layout_constraintEnd_toStartOf="@+id/ivArrowRightMessages"
+            app:layout_constraintStart_toEndOf="@+id/ivProfileMessages"
+            app:layout_constraintTop_toTopOf="@+id/ivProfileMessages" />
+
+        <TextView
+            android:id="@+id/tvProfileSettingsDescription"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:letterSpacing="0"
+            android:lineSpacingExtra="5sp"
+            android:paddingStart="10dp"
+            android:text="@string/tv_profile_settings_description_text"
+            android:textColor="@color/steel"
+            android:textSize="13sp"
+            app:layout_constraintBottom_toBottomOf="@+id/ivProfileSettings"
+            app:layout_constraintEnd_toStartOf="@+id/ivArrowRightSettings"
+            app:layout_constraintStart_toEndOf="@+id/ivProfileSettings"
+            app:layout_constraintTop_toBottomOf="@+id/tvProfileSettings" />
+
+        <TextView
+            android:id="@+id/tvProfileExchangeRatesDescription"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:letterSpacing="0"
+            android:lineSpacingExtra="5sp"
+            android:paddingStart="10dp"
+            android:text="@string/tv_profile_exchange_rates_description_text"
+            android:textColor="@color/steel"
+            android:textSize="13sp"
+            app:layout_constraintBottom_toBottomOf="@+id/ivProfileExchangeRates"
+            app:layout_constraintEnd_toStartOf="@+id/ivArrowRightExchangeRates"
+            app:layout_constraintStart_toEndOf="@+id/ivProfileExchangeRates"
+            app:layout_constraintTop_toBottomOf="@+id/tvProfileExchangeRates" />
+
+        <TextView
+            android:id="@+id/tvProfileOffersAndPromotionsDescription"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:letterSpacing="0"
+            android:lineSpacingExtra="5sp"
+            android:paddingStart="10dp"
+            android:text="@string/tv_profile_offers_and_promotions_description_text"
+            android:textColor="@color/steel"
+            android:textSize="13sp"
+            app:layout_constraintBottom_toBottomOf="@+id/ivProfileOffersAndPromotions"
+            app:layout_constraintEnd_toStartOf="@+id/ivArrowRightOffersAndPromotions"
+            app:layout_constraintStart_toEndOf="@+id/ivProfileOffersAndPromotions"
+            app:layout_constraintTop_toBottomOf="@+id/tvProfileOffersAndPromotions" />
+
+        <TextView
+            android:id="@+id/tvProfileMessagesDescription"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:letterSpacing="0"
+            android:lineSpacingExtra="5sp"
+            android:paddingStart="10dp"
+            android:text="@string/tv_profile_messages_description_text"
+            android:textColor="@color/steel"
+            android:textSize="13sp"
+            app:layout_constraintBottom_toBottomOf="@+id/ivProfileMessages"
+            app:layout_constraintEnd_toStartOf="@+id/ivArrowRightOffersAndPromotions"
+            app:layout_constraintStart_toEndOf="@+id/ivProfileMessages"
+            app:layout_constraintTop_toBottomOf="@+id/tvProfileMessages" />
+
+        <ImageView
+            android:id="@+id/ivArrowRightSettings"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:src="@drawable/ic_arrow_right"
+            app:layout_constraintBottom_toBottomOf="@+id/tvProfileSettingsDescription"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tvProfileSettings"
+            app:layout_constraintTop_toTopOf="@+id/tvProfileSettings" />
+
+        <ImageView
+            android:id="@+id/ivArrowRightExchangeRates"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:src="@drawable/ic_arrow_right"
+            app:layout_constraintBottom_toBottomOf="@+id/tvProfileExchangeRatesDescription"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tvProfileExchangeRates"
+            app:layout_constraintTop_toTopOf="@+id/tvProfileExchangeRates" />
+
+        <ImageView
+            android:id="@+id/ivArrowRightOffersAndPromotions"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:src="@drawable/ic_arrow_right"
+            app:layout_constraintBottom_toBottomOf="@+id/tvProfileOffersAndPromotionsDescription"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tvProfileOffersAndPromotions"
+            app:layout_constraintTop_toTopOf="@+id/tvProfileOffersAndPromotions" />
+
+        <ImageView
+            android:id="@+id/ivArrowRightMessages"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:src="@drawable/ic_arrow_right"
+            app:layout_constraintBottom_toBottomOf="@+id/tvProfileMessagesDescription"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tvProfileMessages"
+            app:layout_constraintTop_toTopOf="@+id/tvProfileMessages" />
+
+        <Space
+            android:id="@+id/bottomSpacer"
+            android:layout_width="0dp"
+            android:layout_height="110dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivProfileMessages" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-    <ImageView
-        android:id="@+id/ivProfileSettings"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_profile_settings"
-        app:layout_constraintBottom_toTopOf="@+id/ivProfileExchangeRates"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/profileHorizontalMidGuideline" />
-
-    <ImageView
-        android:id="@+id/ivProfileExchangeRates"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_profile_exchange_rates"
-        app:layout_constraintBottom_toTopOf="@+id/ivProfileOffersAndPromotions"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ivProfileSettings" />
-
-
-    <ImageView
-        android:id="@+id/ivProfileOffersAndPromotions"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_profile_offers_and_promotions"
-        app:layout_constraintBottom_toTopOf="@+id/ivProfileMessages"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ivProfileExchangeRates" />
-
-    <ImageView
-        android:id="@+id/ivProfileMessages"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_profile_messages"
-        app:layout_constraintBottom_toTopOf="@+id/profileHorizontalBottomGuideline"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ivProfileOffersAndPromotions" />
-
-    <TextView
-        android:id="@+id/tvProfileSettings"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/sfpro_text_regular"
-        android:letterSpacing="0"
-        android:lineSpacingExtra="4sp"
-        android:paddingLeft="10dp"
-        android:text="@string/tv_profile_settings_text"
-        android:textColor="@color/white"
-        android:textSize="16sp"
-        android:textStyle="normal"
-        app:layout_constraintEnd_toStartOf="@+id/ivArrowRightSettings"
-        app:layout_constraintStart_toEndOf="@+id/ivProfileSettings"
-        app:layout_constraintTop_toTopOf="@+id/ivProfileSettings" />
-
-    <TextView
-        android:id="@+id/tvProfileExchangeRates"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/sfpro_text_regular"
-        android:letterSpacing="0"
-        android:lineSpacingExtra="4sp"
-        android:paddingLeft="10dp"
-        android:text="@string/tv_profile_exchange_rates_text"
-        android:textColor="@color/white"
-        android:textSize="16sp"
-        android:textStyle="normal"
-        app:layout_constraintEnd_toStartOf="@+id/ivArrowRightExchangeRates"
-        app:layout_constraintStart_toEndOf="@+id/ivProfileExchangeRates"
-        app:layout_constraintTop_toTopOf="@+id/ivProfileExchangeRates" />
-
-    <TextView
-        android:id="@+id/tvProfileOffersAndPromotions"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/sfpro_text_regular"
-        android:letterSpacing="0"
-        android:lineSpacingExtra="4sp"
-        android:paddingLeft="10dp"
-        android:text="@string/tv_profile_offers_and_promotions_text"
-        android:textColor="@color/white"
-        android:textSize="16sp"
-        android:textStyle="normal"
-        app:layout_constraintEnd_toStartOf="@+id/ivArrowRightOffersAndPromotions"
-        app:layout_constraintStart_toEndOf="@+id/ivProfileOffersAndPromotions"
-        app:layout_constraintTop_toTopOf="@+id/ivProfileOffersAndPromotions" />
-
-    <TextView
-        android:id="@+id/tvProfileMessages"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/sfpro_text_regular"
-        android:letterSpacing="0"
-        android:lineSpacingExtra="4sp"
-        android:paddingLeft="10dp"
-        android:text="@string/tv_profile_messages_text"
-        android:textColor="@color/white"
-        android:textSize="16sp"
-        android:textStyle="normal"
-        app:layout_constraintEnd_toStartOf="@+id/ivArrowRightMessages"
-        app:layout_constraintStart_toEndOf="@+id/ivProfileMessages"
-        app:layout_constraintTop_toTopOf="@+id/ivProfileMessages" />
-
-    <TextView
-        android:id="@+id/tvProfileSettingsDescription"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:letterSpacing="0"
-        android:lineSpacingExtra="5sp"
-        android:paddingLeft="10dp"
-        android:text="@string/tv_profile_settings_description_text"
-        android:textColor="@color/steel"
-        android:textSize="13sp"
-        app:layout_constraintBottom_toBottomOf="@+id/ivProfileSettings"
-        app:layout_constraintEnd_toStartOf="@+id/ivArrowRightSettings"
-        app:layout_constraintStart_toEndOf="@+id/ivProfileSettings"
-        app:layout_constraintTop_toBottomOf="@+id/tvProfileSettings" />
-
-    <TextView
-        android:id="@+id/tvProfileExchangeRatesDescription"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:letterSpacing="0"
-        android:lineSpacingExtra="5sp"
-        android:paddingLeft="10dp"
-        android:text="@string/tv_profile_exchange_rates_description_text"
-        android:textColor="@color/steel"
-        android:textSize="13sp"
-        app:layout_constraintBottom_toBottomOf="@+id/ivProfileExchangeRates"
-        app:layout_constraintEnd_toStartOf="@+id/ivArrowRightExchangeRates"
-        app:layout_constraintStart_toEndOf="@+id/ivProfileExchangeRates"
-        app:layout_constraintTop_toBottomOf="@+id/tvProfileExchangeRates" />
-
-    <TextView
-        android:id="@+id/tvProfileOffersAndPromotionsDescription"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:letterSpacing="0"
-        android:lineSpacingExtra="5sp"
-        android:paddingLeft="10dp"
-        android:text="@string/tv_profile_offers_and_promotions_description_text"
-        android:textColor="@color/steel"
-        android:textSize="13sp"
-        app:layout_constraintBottom_toBottomOf="@+id/ivProfileOffersAndPromotions"
-        app:layout_constraintEnd_toStartOf="@+id/ivArrowRightOffersAndPromotions"
-        app:layout_constraintStart_toEndOf="@+id/ivProfileOffersAndPromotions"
-        app:layout_constraintTop_toBottomOf="@+id/tvProfileOffersAndPromotions" />
-
-    <TextView
-        android:id="@+id/tvProfileMessagesDescription"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:letterSpacing="0"
-        android:lineSpacingExtra="5sp"
-        android:paddingLeft="10dp"
-        android:text="@string/tv_profile_messages_description_text"
-        android:textColor="@color/steel"
-        android:textSize="13sp"
-        app:layout_constraintBottom_toBottomOf="@+id/ivProfileMessages"
-        app:layout_constraintEnd_toStartOf="@+id/ivArrowRightOffersAndPromotions"
-        app:layout_constraintStart_toEndOf="@+id/ivProfileMessages"
-        app:layout_constraintTop_toBottomOf="@+id/tvProfileMessages" />
-
-    <ImageView
-        android:id="@+id/ivArrowRightSettings"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:src="@drawable/ic_arrow_right"
-        app:layout_constraintBottom_toBottomOf="@+id/tvProfileSettingsDescription"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/tvProfileSettings"
-        app:layout_constraintTop_toTopOf="@+id/tvProfileSettings" />
-
-    <ImageView
-        android:id="@+id/ivArrowRightExchangeRates"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:src="@drawable/ic_arrow_right"
-        app:layout_constraintBottom_toBottomOf="@+id/tvProfileExchangeRatesDescription"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/tvProfileExchangeRates"
-        app:layout_constraintTop_toTopOf="@+id/tvProfileExchangeRates" />
-
-    <ImageView
-        android:id="@+id/ivArrowRightOffersAndPromotions"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:src="@drawable/ic_arrow_right"
-        app:layout_constraintBottom_toBottomOf="@+id/tvProfileOffersAndPromotionsDescription"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/tvProfileOffersAndPromotions"
-        app:layout_constraintTop_toTopOf="@+id/tvProfileOffersAndPromotions" />
-
-    <ImageView
-        android:id="@+id/ivArrowRightMessages"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:src="@drawable/ic_arrow_right"
-        app:layout_constraintBottom_toBottomOf="@+id/tvProfileMessagesDescription"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/tvProfileMessages"
-        app:layout_constraintTop_toTopOf="@+id/tvProfileMessages" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/profileHorizontalMidGuideline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.4168" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/profileHorizontalTopGuideline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.115" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/profileHorizontalBottomGuideline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.7766" />
-
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

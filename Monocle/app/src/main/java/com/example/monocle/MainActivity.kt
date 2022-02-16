@@ -1,37 +1,43 @@
 package com.example.monocle
-
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.transition.AutoTransition
-import android.transition.TransitionManager
-import android.view.ViewGroup
-import android.widget.Button
-import android.widget.EditText
-import androidx.constraintlayout.widget.ConstraintLayout
-import androidx.constraintlayout.widget.ConstraintSet
+import android.view.View
+import androidx.navigation.findNavController
+import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.setupActionBarWithNavController
+import androidx.navigation.ui.setupWithNavController
 import com.example.monocle.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        supportActionBar?.hide()
 
-        findViewById<EditText>(R.id.etSignInEnterNumber).setOnClickListener {
-            val constraint = ConstraintSet()
-            val transition = AutoTransition()
-            val startView : ViewGroup = findViewById(R.id.root)
-            transition.duration = 500
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-            constraint.clone(this, R.layout.activity_main_keyframe2)
-            TransitionManager.beginDelayedTransition(startView, transition)
-            constraint.applyTo(startView as ConstraintLayout?)
-        }
+        val bottomNavigationView = binding.bottomNavigationView
+        val navController = findNavController(R.id.navFragment)
 
-        findViewById<Button>(R.id.btnGoToProfile).setOnClickListener {
-            Intent(this, SecondActivity::class.java).also {
-                startActivity(it)
-            }
+        val appBarConfiguration = AppBarConfiguration(
+            setOf(
+                R.id.navigation_balance,
+                R.id.navigation_transfer,
+                R.id.navigation_accounts,
+                R.id.navigation_profile
+            )
+        )
+        setupActionBarWithNavController(navController, appBarConfiguration)
+        bottomNavigationView.setupWithNavController(navController)
+
+        navController.addOnDestinationChangedListener { _, dest, _ ->
+            if(dest.id == R.id.navigation_sign_in)
+                bottomNavigationView.visibility = View.GONE
+            else
+                bottomNavigationView.visibility = View.VISIBLE
         }
     }
 }
