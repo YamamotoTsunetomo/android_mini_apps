@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/nord6"
+    android:padding="16dp"
+    tools:context=".ClockFragment">
+
+
+    <TextView
+        android:id="@+id/tvTimerTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="68dp"
+        android:text="@string/timer"
+        android:textSize="40sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvAlarmTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="@string/alarm"
+        android:textSize="40sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvTimerValue" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnSetTimer"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_margin="4dp"
+        android:background="@drawable/btn_shape"
+        android:text="@string/btn_set_timer_text"
+        android:textColor="@color/nord6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTimerTitle" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnSetAlarm"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_margin="4dp"
+        android:layout_marginTop="128dp"
+        android:background="@drawable/btn_shape"
+        android:text="@string/btn_set_alarm_text"
+        android:textColor="@color/nord6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etSetAlarmHours" />
+
+    <SeekBar
+        android:id="@+id/sbTimer"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_margin="4dp"
+        android:layout_marginTop="20dp"
+        android:progress="25"
+        app:layout_constraintEnd_toStartOf="@+id/btnSetTimer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTimerTitle" />
+
+    <TextView
+        android:id="@+id/tvTimerValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sbTimer"
+        android:text="25"
+        tools:text="30" />
+
+    <EditText
+        android:id="@+id/etSetAlarmHours"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxLength="2"
+        android:layout_margin="4dp"
+        android:hint="@string/two_zeroes"
+        android:inputType="time"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+        app:layout_constraintTop_toBottomOf="@+id/tvAlarmTitle" />
+
+
+    <EditText
+        android:id="@+id/etSetAlarmMinutes"
+        android:layout_width="wrap_content"
+        android:maxLength="2"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:hint="@string/two_zeroes"
+        android:inputType="time"
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="@+id/guideline2"
+        app:layout_constraintTop_toBottomOf="@+id/tvAlarmTitle" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+</androidx.constraintlayout.widget.ConstraintLayout>

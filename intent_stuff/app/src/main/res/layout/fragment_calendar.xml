@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/nord6"
+    android:padding="16dp"
+    tools:context=".CalendarFragment">
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnSetEvent"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="126dp"
+        android:background="@drawable/btn_shape"
+        android:text="@string/btn_set_event_text"
+        android:textColor="@color/nord6"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etEventTitle" />
+
+    <TextView
+        android:id="@+id/tvEventHeader"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="68dp"
+        android:text="@string/calendar"
+        android:textSize="40sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvBeginTimeTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/begin_time"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvEventHeader" />
+
+    <TextView
+        android:id="@+id/tvEndTimeTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="41dp"
+        android:text="@string/end_time"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etBeginTimeHour" />
+
+    <EditText
+        android:id="@+id/etBeginTimeYear"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:background="@drawable/edit_text_shape"
+        android:hint="yyyy"
+        android:theme="@style/EtStyle"
+        app:layout_constraintEnd_toStartOf="@+id/etBeginTimeMonth"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvBeginTimeTitle" />
+
+    <EditText
+        android:id="@+id/etBeginTimeMonth"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/edit_text_shape"
+        android:hint="mm"
+        android:theme="@style/EtStyle"
+        app:layout_constraintEnd_toStartOf="@+id/etBeginTimeDay"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/etBeginTimeYear"
+        app:layout_constraintTop_toBottomOf="@+id/tvBeginTimeTitle" />
+
+    <EditText
+        android:id="@+id/etBeginTimeDay"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/edit_text_shape"
+        android:hint="day"
+        android:theme="@style/EtStyle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/etBeginTimeMonth"
+        app:layout_constraintTop_toBottomOf="@+id/tvBeginTimeTitle" />
+
+    <EditText
+        android:id="@+id/etEndTimeYear"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/edit_text_shape"
+        android:hint="yyyy"
+        android:theme="@style/EtStyle"
+        app:layout_constraintEnd_toStartOf="@+id/etEndTimeMonth"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvEndTimeTitle" />
+
+    <EditText
+        android:id="@+id/etEndTimeMonth"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/edit_text_shape"
+        android:hint="mm"
+        android:theme="@style/EtStyle"
+        app:layout_constraintEnd_toStartOf="@+id/etEndTimeDay"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/etEndTimeYear"
+        app:layout_constraintTop_toBottomOf="@+id/tvEndTimeTitle" />
+
+    <EditText
+        android:id="@+id/etEndTimeDay"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/edit_text_shape"
+        android:hint="day"
+        android:theme="@style/EtStyle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/etEndTimeMonth"
+        app:layout_constraintTop_toBottomOf="@+id/tvEndTimeTitle" />
+
+    <EditText
+        android:id="@+id/etBeginTimeHour"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:background="@drawable/edit_text_shape"
+        android:hint="hh"
+        android:theme="@style/EtStyle"
+        app:layout_constraintEnd_toStartOf="@+id/guideline3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etBeginTimeMonth" />
+
+    <EditText
+        android:id="@+id/etEndTimeHour"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:background="@drawable/edit_text_shape"
+        android:hint="hh"
+        android:theme="@style/EtStyle"
+        app:layout_constraintEnd_toStartOf="@+id/guideline3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etEndTimeMonth" />
+
+    <EditText
+        android:id="@+id/etBeginTimeMinutes"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:background="@drawable/edit_text_shape"
+        android:hint="min"
+        android:theme="@style/EtStyle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/etBeginTimeHour"
+        app:layout_constraintTop_toBottomOf="@+id/etBeginTimeMonth" />
+
+    <EditText
+        android:id="@+id/etEndTimeMinutes"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/edit_text_shape"
+        android:hint="min"
+        android:theme="@style/EtStyle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline3"
+        app:layout_constraintTop_toBottomOf="@+id/etEndTimeMonth" />
+
+    <EditText
+        android:id="@+id/etEventTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/edit_text_shape"
+        android:hint="@string/event_title_placeholder"
+        android:textSize="35sp"
+        android:theme="@style/EtStyle"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etEndTimeHour" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">intent_stuff</string>
+    <string name="navigation_clock_title">clock</string>
+    <string name="navigation_calendar_title">calendar</string>
+    <string name="navigation_camera_title">camera</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="btn_set_alarm_text">set alarm</string>
+    <string name="btn_set_timer_text">set timer</string>
+    <string name="two_zeroes">00</string>
+    <string name="timer">Timer</string>
+    <string name="alarm">Alarm</string>
+    <string name="btn_set_event_text">set event</string>
+    <string name="calendar">Calendar</string>
+    <string name="begin_time">Begin Time</string>
+    <string name="end_time">End Time</string>
+    <string name="slash">/</string>
+    <string name="colon">:</string>
+    <string name="event_title_placeholder">Event Title...</string>
+    <string name="capture_image">Capture Image</string>
+    <string name="capture_video">Capture Video</string>
+    <string name="camera">Camera</string>
+</resources>
