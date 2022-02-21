@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.content.FileProvider
+import androidx.core.content.FileProvider.getUriForFile
 import androidx.fragment.app.Fragment
 import com.example.intent_stuff.databinding.FragmentCameraBinding
 import java.io.File
@@ -33,11 +34,12 @@ class CameraFragment : Fragment() {
         _binding = FragmentCameraBinding.inflate(inflater, container, false)
 
         binding.btnCaptureImage.setOnClickListener {
-//            val path = File("my_images")
-//            val file = File(path, "default_image.jpg")
-//            val uri =
-//                context?.let { it1 -> FileProvider.getUriForFile(it1, "com.example.intent_stuff.fileprovider", file) }
-//            camera.launch(uri)
+            val tmpFile = File.createTempFile("tmp_image_file", ".png", activity?.cacheDir).apply {
+                createNewFile()
+                deleteOnExit()
+            }
+            uri = getUriForFile(requireContext(), "com.example.intent_stuff.fileprovider", tmpFile)
+            camera.launch(uri)
         }
         return binding.root
 
