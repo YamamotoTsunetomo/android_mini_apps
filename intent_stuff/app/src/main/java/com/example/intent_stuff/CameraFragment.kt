@@ -1,60 +1,55 @@
 package com.example.intent_stuff
 
+import android.app.Activity
+import android.content.Context
+import android.content.Intent
+import android.graphics.Bitmap
 import android.net.Uri
 import android.os.Bundle
-import androidx.fragment.app.Fragment
+import android.provider.MediaStore
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.ActivityResultRegistry
+import androidx.activity.result.contract.ActivityResultContract
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.core.app.ActivityOptionsCompat
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.DefaultLifecycleObserver
 import androidx.lifecycle.LifecycleOwner
+import androidx.lifecycle.MutableLiveData
 import com.example.intent_stuff.databinding.FragmentCameraBinding
 
-class CameraFragment() : Fragment() {
+class CameraFragment : Fragment() {
+
     private var _binding: FragmentCameraBinding? = null
-    private lateinit var observer: LifeCycleObserver
-
-
     private val binding get() = _binding!!
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-        observer = LifeCycleObserver(requireActivity().activityResultRegistry)
-        lifecycle.addObserver(observer)
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (resultCode == Activity.RESULT_OK && requestCode == 123) {
+            val b = data?.extras?.get("data") as Bitmap
+            binding.imageView.setImageBitmap(b)
+        }
     }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding.btnCaptureImage.setOnClickListener {
+            val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+            startActivityForResult(intent, 123)
+        }
+    }
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentCameraBinding.inflate(inflater, container, false)
-        if (isAdded) {
-            binding.btnCaptureImage.setOnClickListener {
-                observer.setImage(binding.imageView)
-            }
-        }
         return binding.root
-    }
-}
-
-class LifeCycleObserver(private val registry: ActivityResultRegistry) : DefaultLifecycleObserver {
-    private lateinit var getContent: ActivityResultLauncher<String>
-
-    private var uri: Uri? = null
-    override fun onCreate(owner: LifecycleOwner) {
-        getContent = registry.register("key", owner, ActivityResultContracts.GetContent()) {
-            uri = it
-        }
-    }
-
-    fun setImage(v: ImageView) {
-        getContent.launch("image/*")
-        v.setImageURI(uri)
     }
 }
 

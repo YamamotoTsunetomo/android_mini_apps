@@ -13,8 +13,8 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="68dp"
-        android:text="DOESN'T WORK.. YET"
-        android:textSize="30sp"
+        android:text="@string/camera"
+        android:textSize="40sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
