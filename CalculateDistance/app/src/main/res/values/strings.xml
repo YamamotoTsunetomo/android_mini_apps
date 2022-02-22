@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Calculate Distance</string>
+    <string name="start_location">start location</string>
+    <string name="end_location">end location</string>
+    <string name="three_dots">...</string>
+    <string name="btn_map_text">choose on map</string>
+</resources>
