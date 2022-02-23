@@ -1,6 +1,7 @@
 package com.example.calculatedistance
 
 import android.Manifest
+import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
@@ -74,17 +75,27 @@ class MainActivity : AppCompatActivity() {
         )
     }
 
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode == 1 && resultCode == Activity.RESULT_OK) {
+            val place = PlacePicker.getPlace(this, data!!)
+            val location = outputOfMapToHumanReadableFormat(place.latLng.toString())
+            val editText =
+                if (isMapCalledForStartLocation) binding.etStartLocation else binding.etEndLocation
+
+            setCoordinates(location, isMapCalledForStartLocation)
+            editText.text = location.joinToString()
+        }
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
 
         val launchMap = registerForActivityResult(
             ActivityResultContracts.StartActivityForResult(),
             activityResultRegistry
         ) {
-            val place = try {
-                PlacePicker.getPlace(this, it?.data?: Intent(Intent.ACTION_INSERT))
-            } catch (e: Exception) {
-                PlacePicker.getPlace(this, it?.data!!)
-            }
+
+            val place = PlacePicker.getPlace(this, it.data!!)
 
             val location = outputOfMapToHumanReadableFormat(place.latLng.toString())
             val editText =
@@ -109,7 +120,8 @@ class MainActivity : AppCompatActivity() {
             if (hasPermission(this, permissions)) {
                 val builder = PlacePicker.IntentBuilder()
                 isMapCalledForStartLocation = isStart
-                launchMap.launch(builder.build(this))
+                startActivityForResult(builder.build(this), 1)
+//                launchMap.launch(builder.build(this))
             }
         }
 
