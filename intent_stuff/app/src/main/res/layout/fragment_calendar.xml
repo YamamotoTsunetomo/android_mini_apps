@@ -12,12 +12,12 @@
         android:id="@+id/btnSetEvent"
         android:layout_width="0dp"
         android:layout_height="40dp"
-        android:layout_marginTop="126dp"
+        android:layout_marginTop="40dp"
         android:background="@drawable/btn_shape"
         android:text="@string/btn_set_event_text"
         android:textColor="@color/nord6"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.625"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etEventTitle" />
 

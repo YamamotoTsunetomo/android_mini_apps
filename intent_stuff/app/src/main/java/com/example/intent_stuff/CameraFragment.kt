@@ -10,6 +10,7 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.content.FileProvider
 import androidx.core.content.FileProvider.getUriForFile
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import com.example.intent_stuff.databinding.FragmentCameraBinding
 import java.io.File
 
@@ -25,13 +26,19 @@ class CameraFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+        _binding = FragmentCameraBinding.inflate(inflater, container, false)
+        val model = ViewModelProvider(this).get(CameraViewModel::class.java)
+
+        binding.imageView.setImageURI(model.uri)
+
         val camera = registerForActivityResult(ActivityResultContracts.TakePicture()) {
             Log.d("CAMERA", it.toString())
             Log.d("CAMERA", uri.toString())
-            if (it)
+            if (it) {
                 binding.imageView.setImageURI(uri)
+                model.uri = uri
+            }
         }
-        _binding = FragmentCameraBinding.inflate(inflater, container, false)
 
         binding.btnCaptureImage.setOnClickListener {
             val tmpFile = File.createTempFile("tmp_image_file", ".png", activity?.cacheDir).apply {
