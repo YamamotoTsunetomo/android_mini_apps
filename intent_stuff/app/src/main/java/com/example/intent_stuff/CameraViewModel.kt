@@ -1,12 +1,30 @@
 package com.example.intent_stuff
 
-import android.content.Context
 import android.net.Uri
-import androidx.core.content.FileProvider.getUriForFile
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
-import java.io.File
+import kotlinx.coroutines.flow.MutableStateFlow
 
-class CameraViewModel : ViewModel() {
-    var uri : Uri? = null
+
+data class Event<T>(val content: T) {
+    fun hasBeenHandled() = content == null
+}
+
+class CameraViewModel(
+    private val savedStateHandle: SavedStateHandle
+) : ViewModel() {
+    val event: MutableLiveData<Event<Uri?>> = MutableLiveData(
+        Event(savedStateHandle.get<Uri?>(USER_UI_STATE_KEY))
+    )
+
+
+    fun setSavedStateHandle(uri: Uri?) {
+        this.event.value = Event(uri)
+        savedStateHandle.set(USER_UI_STATE_KEY, uri)
+    }
+
+    companion object {
+        const val USER_UI_STATE_KEY = "user_ui_state"
+    }
 }

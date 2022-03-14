@@ -7,11 +7,17 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.activity.result.contract.ActivityResultContracts
-import androidx.core.content.FileProvider
 import androidx.core.content.FileProvider.getUriForFile
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.intent_stuff.databinding.FragmentCameraBinding
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.async
+import kotlinx.coroutines.coroutineScope
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.flow.getAndUpdate
+import kotlinx.coroutines.runBlocking
 import java.io.File
 
 class CameraFragment : Fragment() {
@@ -28,15 +34,17 @@ class CameraFragment : Fragment() {
     ): View {
         _binding = FragmentCameraBinding.inflate(inflater, container, false)
         val model = ViewModelProvider(this).get(CameraViewModel::class.java)
-
-        binding.imageView.setImageURI(model.uri)
+            model.event.observe(viewLifecycleOwner){
+                if (!it.hasBeenHandled()) {
+                    binding.imageView.setImageURI(it.content)
+                }
+            }
 
         val camera = registerForActivityResult(ActivityResultContracts.TakePicture()) {
             Log.d("CAMERA", it.toString())
             Log.d("CAMERA", uri.toString())
             if (it) {
-                binding.imageView.setImageURI(uri)
-                model.uri = uri
+                model.setSavedStateHandle(uri)
             }
         }
 
@@ -52,4 +60,3 @@ class CameraFragment : Fragment() {
 
     }
 }
-
